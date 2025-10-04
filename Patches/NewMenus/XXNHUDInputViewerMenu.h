@@ -8,7 +8,7 @@
 class XXNHUDInputViewerMenu : public RE::Menu {
 	public:
 		enum { kID = 0x420 };
-      static constexpr char* const menuPath = "Data\\Menus\\northernui\\xxnhudinputviewermenu.xml";
+      static constexpr const char* menuPath = "Data\\Menus\\northernui\\xxnhudinputviewermenu.xml";
       enum {
          kMenuModeBoolTrait = kTileValue_user0 // enum name is read by one of our patches
       };

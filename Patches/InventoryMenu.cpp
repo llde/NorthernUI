@@ -46,7 +46,7 @@ namespace CobbPatches {
          //
          namespace ItemVerbs {
             void _stdcall Inner(UInt8 formType, TESForm* item, RE::ExtraContainerChanges::EntryData* entry) {
-               constexpr char* empty = "";
+               constexpr char const* empty = "";
                const char* verb = empty;
                if (item == *RE::ptrRepairHammerForm) {
                   verb = RE::GMST::sReticleVerbs[18]->s; // Repair
@@ -129,7 +129,7 @@ namespace CobbPatches {
          }
          namespace OtherVerbs {
             void _stdcall Inner(SInt32 tileID) {
-               constexpr char* empty = "";
+               constexpr char const* empty = "";
                const char* verb = empty;
                //
                if (tileID >= 13 && tileID <= 18) { // sort header

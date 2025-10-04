@@ -34,7 +34,7 @@ namespace CobbPatches {
    namespace EnhancedMovement {
       namespace Full360Movement {
          constexpr float ce_speedCap   = 1.0F;
-         constexpr char* ce_targetNode = "Bip01";
+         constexpr char const* ce_targetNode = "Bip01";
          //
          void _stdcall Inner(RE::Actor* subject, NiVector3& posDelta) {
             if (!NorthernUI::INI::Features::bEnhancedMovement360Movement.bCurrent)

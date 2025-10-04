@@ -26,7 +26,7 @@ class XXNSampleInventoryMenu : public RE::Menu {
       XXNSampleInventoryMenu();
       ~XXNSampleInventoryMenu();
 
-      static constexpr char* const menuPath = "Data\\Menus\\northernui\\xxnsampleinventorymenu.xml";
+      static constexpr const char* const menuPath = "Data\\Menus\\northernui\\xxnsampleinventorymenu.xml";
 
    protected:
       struct ItemAndIndex {

@@ -23,7 +23,7 @@ class XXNAlchemyMenu : public RE::Menu {
       XXNAlchemyMenu();
       ~XXNAlchemyMenu();
 
-      static constexpr char* const menuPath = "Data\\Menus\\northernui\\xxnalchemymenu.xml";
+      static constexpr const char* menuPath = "Data\\Menus\\northernui\\xxnalchemymenu.xml";
       static constexpr bool allowNonOverlappingEffectPairs = true;
 
       enum {

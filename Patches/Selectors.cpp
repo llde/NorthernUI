@@ -86,9 +86,9 @@ namespace CobbPatches {
          // the vanilla screen() and strings() tiles.
          //
          namespace Setup { // Patch InterfaceManager::InitializeMenuRootAndStrings
-            constexpr char* pathDatastore = "Data\\Menus\\NorthernUI\\datastore.xml";
-            constexpr char* pathStrings   = "Data\\Menus\\NorthernUI\\strings.xml";
-            constexpr char* pathLocCfg    = "Data\\Menus\\NorthernUI\\localizationconfig.xml";
+            constexpr const char* pathDatastore = "Data\\Menus\\NorthernUI\\datastore.xml";
+            constexpr const char* pathStrings   = "Data\\Menus\\NorthernUI\\strings.xml";
+            constexpr const char* pathLocCfg    = "Data\\Menus\\NorthernUI\\localizationconfig.xml";
             void Inner(RE::Tile* menuRoot) {
                {  // prefs
                   auto tile = RE::TileRect::CreateOnGameHeap();

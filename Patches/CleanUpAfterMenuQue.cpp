@@ -19,7 +19,7 @@ MenuQueState g_menuQue;
 
 namespace CobbPatches {
    namespace CleanUpAfterMenuQue {
-      constexpr char* ce_menuQueOBSEName = "OBSE_Kyoma_MenuQue";
+      constexpr const char* ce_menuQueOBSEName = "OBSE_Kyoma_MenuQue";
 
       bool _GetMQSubmoduleBaseFromWinAPI() {
          constexpr int LOAD_COUNT = 140;
