@@ -2,7 +2,7 @@
 #include "strings.h"
 
 namespace {
-   constexpr char* entities[] = {
+   constexpr char const* entities[] = {
       "&amp;",
       "&apos;",
       "&gt;",
@@ -54,7 +54,7 @@ namespace {
       }
       auto _compare = &strncmp;
       if (doc.caseInsensitive)
-         _compare = &strnicmp;
+         _compare = &_strnicmp;
       for (auto it = doc.entities.begin(); it != doc.entities.end(); ++it) {
          auto& entity = it->entity;
          auto  length = entity.size();
