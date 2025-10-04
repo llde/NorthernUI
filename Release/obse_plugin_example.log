@@ -1,0 +1,24 @@
+﻿  xml.cpp
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\Miscellaneous\xml.cpp(57,22): warning C4996: 'strnicmp': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strnicmp. See online help for details.
+  xml.cpp
+  AudioMenu.cpp
+  ClassMenu.cpp
+  ContainerMenu.cpp
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\Patches\ContainerMenu.cpp(26,13): warning C4102: 'lExit': etichetta senza riferimenti
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\Patches\ContainerMenu.cpp(44): warning C4409: dimensione istruzione non valida
+  DialogMenu.cpp
+  EffectSettingMenu.cpp
+  EnchantingAndSigilStoneMenus.cpp
+  EnhancedMovement.cpp
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\ReverseEngineered\Forms\Actor.h(412,60): error C2061: errore di sintassi: identificatore 'BaseExtraList'
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\ReverseEngineered\Forms\Actor.h(413,61): error C2061: errore di sintassi: identificatore 'BaseExtraList'
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\Patches\EnhancedMovement.cpp(37,49): error C2440: 'inizializzazione': impossibile convertire da 'const char [6]' a 'char *const '
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\Patches\EnhancedMovement.cpp(37,40): message : Conversione da un valore letterale stringa perde qualificatore const (vedere /Zc:strictStrings)
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\Patches\EnhancedMovement.cpp(37,40): error C2131: l'espressione costante non ha restituito una costante
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\Patches\EnhancedMovement.cpp(37,40): message : è stata rilevata un'espressione o una sottoespressione non costante
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\Patches\EnhancedMovement.cpp(505): warning C4409: dimensione istruzione non valida
+  ExtendedConsoleCommands.cpp
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\ReverseEngineered\Forms\Actor.h(412,60): error C2061: errore di sintassi: identificatore 'BaseExtraList'
+C:\users\lorenzo\Documents\cleanobse\NorthernUI\ReverseEngineered\Forms\Actor.h(413,61): error C2061: errore di sintassi: identificatore 'BaseExtraList'
+  HUDMainMenu.cpp
