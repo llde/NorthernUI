@@ -2,6 +2,8 @@
 #include "ReverseEngineered/Forms/MobileObject.h"
 #include "ReverseEngineered/Forms/TESObjectREFR.h"
 
+#include "obse/GameBSExtraData.h"
+
 namespace RE {
    enum AnimGroupType : UInt8 { // seems to be referred to in debug log messages as "actions;" possibly the precursor to Skyrim's Action system?
       kAnimGroup_Idle = 0,
@@ -409,8 +411,8 @@ namespace RE {
 
          // unk1 looks like quantity, usu. 1; ignored for ammo (equips entire stack)
          // itemExtraList is NULL as the container changes entry is not resolved before the call
-         void				EquipItem(TESForm * objType, UInt32 unk1, BaseExtraList* itemExtraList, UInt32 unk3, bool lockEquip);
-         void				UnequipItem(TESForm* objType, UInt32 unk1, BaseExtraList* itemExtraList, UInt32 unk3, bool lockUnequip, UInt32 unk5);
+         void				EquipItem(TESForm * objType, UInt32 unk1, ExtraDataList* itemExtraList, UInt32 unk3, bool lockEquip);
+         void				UnequipItem(TESForm* objType, UInt32 unk1, ExtraDataList* itemExtraList, UInt32 unk3, bool lockUnequip, UInt32 unk5);
 
          UInt32				GetBaseActorValue(UInt32 value);
          EquippedItemsList	GetEquippedItems();

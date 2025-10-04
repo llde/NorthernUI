@@ -89,7 +89,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir);$(SolutionDir)\..;$(SolutionDir)\..\obse\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir);$(SolutionDir)..\obse\;$(SolutionDir)\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_NO_VA_START_VALIDATION;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;WIN32;NDEBUG;_WINDOWS;_USRDLL;OBLIVION_VERSION=0x010201A0;OBLIVION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
@@ -242,6 +242,45 @@
   <ItemGroup>
     <!-- <ClInclude Include="..\obse\obse\*.h" Exclude="..\obse\obse\Commands_*.h" />
     <ClInclude Include="..\obse\StdAfx.h" /> -->
+    <ClInclude Include="..\obse\obse\GameActorValues.h" />
+    <ClInclude Include="..\obse\obse\GameAPI.h" />
+    <ClInclude Include="..\obse\obse\GameBSExtraData.h" />
+    <ClInclude Include="..\obse\obse\GameData.h" />
+    <ClInclude Include="..\obse\obse\GameExtraData.h" />
+    <ClInclude Include="..\obse\obse\GameForms.h" />
+    <ClInclude Include="..\obse\obse\GameMagicEffects.h" />
+    <ClInclude Include="..\obse\obse\GameMenus.h" />
+    <ClInclude Include="..\obse\obse\GameObjects.h" />
+    <ClInclude Include="..\obse\obse\GameOSDepend.h" />
+    <ClInclude Include="..\obse\obse\GameProcess.h" />
+    <ClInclude Include="..\obse\obse\GameRTTI.h" />
+    <ClInclude Include="..\obse\obse\GameTasks.h" />
+    <ClInclude Include="..\obse\obse\GameThreads.h" />
+    <ClInclude Include="..\obse\obse\GameTiles.h" />
+    <ClInclude Include="..\obse\obse\GameTypes.h" />
+    <ClInclude Include="..\obse\obse\HavokBase.h" />
+    <ClInclude Include="..\obse\obse\HavokCharacters.h" />
+    <ClInclude Include="..\obse\obse\HavokCollision.h" />
+    <ClInclude Include="..\obse\obse\HavokDynamics.h" />
+    <ClInclude Include="..\obse\obse\HavokReflection.h" />
+    <ClInclude Include="..\obse\obse\HavokTypes.h" />
+    <ClInclude Include="..\obse\obse\NiAPI.h" />
+    <ClInclude Include="..\obse\obse\NiCollision.h" />
+    <ClInclude Include="..\obse\obse\NiControllers.h" />
+    <ClInclude Include="..\obse\obse\NiExtraData.h" />
+    <ClInclude Include="..\obse\obse\NiGeometry.h" />
+    <ClInclude Include="..\obse\obse\NiHavok.h" />
+    <ClInclude Include="..\obse\obse\NiHavokCharacters.h" />
+    <ClInclude Include="..\obse\obse\NiHavokConstraints.h" />
+    <ClInclude Include="..\obse\obse\NiHavokObjects.h" />
+    <ClInclude Include="..\obse\obse\NiHavokShapes.h" />
+    <ClInclude Include="..\obse\obse\NiNodes.h" />
+    <ClInclude Include="..\obse\obse\NiObjects.h" />
+    <ClInclude Include="..\obse\obse\NiProperties.h" />
+    <ClInclude Include="..\obse\obse\NiRenderer.h" />
+    <ClInclude Include="..\obse\obse\NiRTTI.h" />
+    <ClInclude Include="..\obse\obse\NiTask.h" />
+    <ClInclude Include="..\obse\obse\NiTypes.h" />
     <ClInclude Include="dds.h" />
     <ClInclude Include="Fun\x86Reader.h" />
     <ClInclude Include="Fun\x86Writer.h" />
