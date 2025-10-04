@@ -15,7 +15,7 @@ namespace XXNMenuHelpers {
       bool      state;
       bool      requiresRestart = false;
 
-      inline bool Checkbox::Get() const {
+      inline bool Get() const {
          return this->state;
       };
       bool HandleClick(RE::Tile* tile); // returns true if event handled; false if event not relevant
