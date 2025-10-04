@@ -96,7 +96,7 @@ namespace CobbPatches {
                   g_northernUIPrefstore = tile;
                }
                //
-               if ((*g_FileFinder)->FindFile(pathLocCfg, 0, 0, -1) == FileFinder::kFileStatus_NotFound) {
+               if ((*g_FileFinder)->FindFile(pathLocCfg, 0, FileFinder::Flags::FindFile_ArchiveAndLooseFile, -1) == FileFinder::kFileStatus_NotFound) {
                   _MESSAGE("XXNLocalization file is missing. The xxnLocalization tile will be nullptr.");
                } else {
                   g_northernUILocConfigTile = CALL_MEMBER_FN(menuRoot, ReadXML)(pathLocCfg);
@@ -104,7 +104,7 @@ namespace CobbPatches {
                      CALL_MEMBER_FN(g_northernUILocConfigTile, AppendToTile)(nullptr, nullptr); // remove from Tile hierarchy
                }
                //
-               if ((*g_FileFinder)->FindFile(pathDatastore, 0, 0, -1) == FileFinder::kFileStatus_NotFound) {
+               if ((*g_FileFinder)->FindFile(pathDatastore, 0, FileFinder::Flags::FindFile_ArchiveAndLooseFile, -1) == FileFinder::kFileStatus_NotFound) {
                   _MESSAGE("Datastore file is missing.");
                   auto tile = RE::TileRect::CreateOnGameHeap();
                   tile->Unk_01(nullptr, "NorthernUIDatastore", nullptr);
@@ -115,7 +115,7 @@ namespace CobbPatches {
                      CALL_MEMBER_FN(g_northernUIDatastore, AppendToTile)(nullptr, nullptr); // remove from Tile hierarchy
                }
                //
-               if ((*g_FileFinder)->FindFile(pathStrings, 0, 0, -1) == FileFinder::kFileStatus_NotFound) {
+               if ((*g_FileFinder)->FindFile(pathStrings, 0, FileFinder::Flags::FindFile_ArchiveAndLooseFile, -1) == FileFinder::kFileStatus_NotFound) {
                   _MESSAGE("XXNStrings file is missing. The xxnStrings tile will be nullptr.");
                } else {
                   g_northernUIStringstore = CALL_MEMBER_FN(menuRoot, ReadXML)(pathStrings);

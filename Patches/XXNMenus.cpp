@@ -393,7 +393,7 @@ namespace CobbPatches {
                return;
             if (!NorthernUI::INI::Menus::bUseXXNAlchemyMenu.bCurrent)
                return;
-            if ((*g_FileFinder)->FindFile(::XXNAlchemyMenu::menuPath, 0, 0, -1) == FileFinder::kFileStatus_NotFound) {
+            if ((*g_FileFinder)->FindFile(::XXNAlchemyMenu::menuPath, 0, FileFinder::Flags::FindFile_ArchiveAndLooseFile, -1) == FileFinder::kFileStatus_NotFound) {
                _MESSAGE("[XXNMenus] The XML file for the XXNAlchemyMenu is missing. The menu will not be patched in.");
                return;
             }
@@ -430,7 +430,7 @@ namespace CobbPatches {
                return;
             if (!NorthernUI::INI::Menus::bUseXXNSampleInventoryMenu.bCurrent)
                return;
-            if ((*g_FileFinder)->FindFile(::XXNSampleInventoryMenu::menuPath, 0, 0, -1) == FileFinder::kFileStatus_NotFound) {
+            if ((*g_FileFinder)->FindFile(::XXNSampleInventoryMenu::menuPath, 0, FileFinder::Flags::FindFile_ArchiveAndLooseFile, -1) == FileFinder::kFileStatus_NotFound) {
                _MESSAGE("[XXNMenus] The XML file for the XXNSampleInventoryMenu is missing. The menu will not be patched in.");
                return;
             }
