@@ -5,6 +5,7 @@
 #include "ReverseEngineered/UI/InterfaceManager.h"
 #include "ReverseEngineered/UI/Menus/AlchemyMenu.h"
 #include "Miscellaneous/strings.h"
+#include <ranges>
 
 XXNAlchemyMenu::ItemAndIndex::ItemAndIndex(RE::ExtraContainerChanges::EntryData* data, UInt32 index) {
    this->data  = data;
@@ -367,7 +368,7 @@ void XXNAlchemyMenu::UpdateInventory() {
       if (data) {
          bool destroy = true;
          auto item = data->type;
-         if (item && data->countDelta && item->typeID == kFormType_Ingredient && !RE::FormIsGoldAsInCurrency(item) && !item->TIsQuestItem()) {
+         if (item && data->countDelta && item->typeID == kFormType_Ingredient && !RE::FormIsGoldAsInCurrency(item) && !item->IsQuestItem()) {
             if (CALL_MEMBER_FN(data, Subroutine004854F0)(player, false, true, true, false)) {
                destroy = false;
             }
@@ -669,7 +670,7 @@ void XXNAlchemyMenu::UpdatePotion() {
       char  buf[12];
       float value = weight;
       {
-         value = min(999.99F, value);
+         value = std::min(999.99F, value);
          if (value >= 1.0F) {
             SInt32 i = (SInt32) value;
             snprintf(buf, sizeof(buf), "%d", i);
@@ -681,7 +682,7 @@ void XXNAlchemyMenu::UpdatePotion() {
       //
       value = this->potion->goldValue;
       {
-         value = min(999.99F, value);
+         value = std::min(999.99F, value);
          if (value >= 1.0F) {
             SInt32 i = (SInt32) value;
             snprintf(buf, sizeof(buf), "%d", i);
@@ -733,8 +734,9 @@ void XXNAlchemyMenu::UpdatePotion() {
          }
          SInt32 finalDuration  = (SInt32) round(duration);
          SInt32 finalMagnitude = (SInt32) round(magnitude);
-         CALL_MEMBER_FN(edi, SetDurationIfPossible )(max((SInt32) finalDuration,  1)); // at 0x00594B47
-         CALL_MEMBER_FN(edi, SetMagnitudeIfPossible)(max((SInt32) finalMagnitude, 1)); // at 0x00594B62
+         //TODO This max call should be made before casting I think
+         CALL_MEMBER_FN(edi, SetDurationIfPossible )(std::max(finalDuration,  1L)); // at 0x00594B47
+         CALL_MEMBER_FN(edi, SetMagnitudeIfPossible)(std::max(finalMagnitude, 1L)); // at 0x00594B62
          CALL_MEMBER_FN(edi, SetAreaIfPossible)(0);
          { // Code in this block is modeled off of AlchemyMenu::RenderPotionEffect
             auto container = this->potionEffectList.container;
@@ -1209,7 +1211,7 @@ void XXNAlchemyMenu::UpdateTextField() {
       return;
    }
    if (name->GetLength()) {
-      auto eax = name->m_data;
+      const char* eax = name->m_data;
       if (!eax)
          eax = "";
       CALL_MEMBER_FN(state, SetStringsTo)(eax);

@@ -225,7 +225,7 @@ void XXNControlsMenu::HandleMouseUp(SInt32 tileID, RE::Tile* target) {
    }
    if (tileID == kTileID_ButtonRename) {
       std::string prompt;
-      auto&       value = this->optionControlScheme.Get();
+      auto&&       value = this->optionControlScheme.Get();
       cobb::snprintf(prompt, NorthernUI::L10N::sControlsRenamePrompt.value, value.c_str());
       RE::ShowTextEditMenu(prompt.c_str(), value.c_str());
       this->modal = kModal_Rename;
@@ -595,7 +595,7 @@ void XXNControlsMenu::ModalCallback_SaveAsNewAndExit() {
    auto& manager = XXNGamepadConfigManager::GetInstance();
    if (!manager.CreateNewProfileByName(rename)) {
       std::string  prompt;
-      std::string& existingName = this->optionControlScheme.Get();
+      std::string&& existingName = this->optionControlScheme.Get();
       if (cobb::strieq(rename, existingName.c_str())) {
          cobb::snprintf(prompt, NorthernUI::L10N::sControlsSaveAsNewButItsTheSameName.value, existingName.c_str());
       } else {

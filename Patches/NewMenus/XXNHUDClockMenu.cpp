@@ -58,7 +58,7 @@ void XXNHUDClockMenu::Synch() {
 // ------------------------
 
 RE::Tile* ShowXXNHUDClockMenu() {
-   if ((*g_FileFinder)->FindFile("Data\\Menus\\NorthernUI\\xxnhudclockmenu.xml", 0, 0, -1) == FileFinder::kFileStatus_NotFound) {
+   if ((*g_FileFinder)->FindFile("Data\\Menus\\NorthernUI\\xxnhudclockmenu.xml", 0, FileFinder::FindFile_ArchiveAndLooseFile, -1) == FileFinder::kFileStatus_NotFound) {
       _MESSAGE("ShowXXNHUDClockMenu: The XML file for the XXNHUDClockMenu is missing. The menu will not be opened.");
       return nullptr;
    }

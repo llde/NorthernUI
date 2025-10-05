@@ -156,7 +156,7 @@ void XXNLockPickMenu::HandleFrame() {
             //
             // Move the lockpick back up.
             //
-            float y = max(0.0, lockpick.y - pickSpeedUp);
+            float y = std::max(0.0f, lockpick.y - pickSpeedUp);
             lockpick.y = y;
             CALL_MEMBER_FN(lockpick.tile, UpdateFloat)(kTileValue_user1, y);
          }
@@ -166,7 +166,7 @@ void XXNLockPickMenu::HandleFrame() {
       }
    } else if (this->state == kState_Pressing) {
       if (this->inputPressDown) {
-         float y = min(1.0, lockpick.y + pickSpeedDown);
+         float y = std::min(1.0f, lockpick.y + pickSpeedDown);
          if (this->targetTumbler < 5) {
             //
             // The player should be targeting a tumbler. Press it down, too.
@@ -245,7 +245,7 @@ void XXNLockPickMenu::HandleFrame() {
             // Animate the tumbler back to its goal, if the player pressed it down only slightly beneath
             //
             bound = tumbler.goal;
-         c = max(bound, c - tumblerSpeedUp);
+         c = std::max(bound, c - tumblerSpeedUp);
          if (tumbler.current != c) {
             tumbler.current = c;
             CALL_MEMBER_FN(tumbler.tile, UpdateFloat)(kTileValue_user1, c);
@@ -270,7 +270,7 @@ void XXNLockPickMenu::HandleFrame() {
       //
       // Update time limit
       //
-      float s = max(0.0, this->timeRemaining - 0.001);
+      float s = std::max(0.0, this->timeRemaining - 0.001);
       this->timeRemaining = s;
       if (s == 0.0) {
          Failure();

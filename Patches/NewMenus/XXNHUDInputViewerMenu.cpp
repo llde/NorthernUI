@@ -102,7 +102,7 @@ void XXNHUDInputViewerMenu::HandleFrame() {
 // ------------------------
 
 RE::Tile* ShowXXNHUDInputViewerMenu() {
-   if ((*g_FileFinder)->FindFile(XXNHUDInputViewerMenu::menuPath, 0, 0, -1) == FileFinder::kFileStatus_NotFound) {
+   if ((*g_FileFinder)->FindFile(XXNHUDInputViewerMenu::menuPath, 0, FileFinder::FindFile_ArchiveAndLooseFile, -1) == FileFinder::kFileStatus_NotFound) {
       _MESSAGE("ShowXXNHUDInputViewerMenu: The XML file for the XXNHUDInputViewerMenu is missing. The menu will not be opened.");
       return nullptr;
    }
