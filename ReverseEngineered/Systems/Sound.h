@@ -4,7 +4,6 @@
 #include "obse/Utilities.h"
 #include "Core.h"
 
-#define DIRECTINPUT_VERSION 0x0800
 #define DIRECTSOUND_VERSION 0x0800
 #include <dsound.h>
 

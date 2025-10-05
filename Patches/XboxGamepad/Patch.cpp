@@ -734,7 +734,7 @@ namespace CobbPatches {
                if ((press || shortcutTo) // at 0x00583AA6
                && (
                   (*(RE::PlayerCharacter**)g_thePlayer)->unk5C0 == false
-                  && !(*g_thePlayer)->IsDead(0)
+                  && !(*g_thePlayer)->IsDead() /*No arg for IsDead in OBSE def check*/
                   && CALL_MEMBER_FN(ui, Subroutine0057D240)(0)
                   && ui->unk008 == 1
                   && ui->activeMenuIDs[0] == 0
