@@ -47,8 +47,8 @@ namespace RE {
       }
       {  // Count items in changes (can be negative if default items have been removed)
          auto changes = GetContainerChangeData(this, container);
-         for (auto entry = changes->objList; entry; entry = entry->next) {
-            auto data = entry->data;
+         for (auto entry = changes->objList->Begin(); entry.End(); ++entry) {
+            auto data = *entry;
             if (data && _ItemIsPlayable(data->type))
                playableCount += data->countDelta;
          }

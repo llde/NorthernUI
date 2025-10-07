@@ -34,7 +34,7 @@ namespace RE {
       this->string.m_dataLen = 0;*/
    };
    bool Tile::TileTemplateItem::ExtendedStrOrNumParse() { // returns true if it's a number
-      constexpr char* entities[] = {
+      constexpr const char* entities[] = {
          "&amp;",
          "&apos;",
          "&gt;",
@@ -311,7 +311,8 @@ namespace RE {
 
    void RegisterTrait(const char* trait, const SInt32 code) {
       #if OBLIVION_VERSION == OBLIVION_VERSION_1_2_416
-         ThisStdCall(0x0058A0A0, nullptr, trait, code);
+       //THEFUCK???? THISCALL WITH NULL THIS?????????
+         ThisStdCall<Tile, const char*, SInt32>(0x0058A0A0, nullptr, trait, code);
          _MESSAGE("Registered new trait: %08X = %s", code, trait);
       #else
          #error unsupported Oblivion version
@@ -388,6 +389,8 @@ namespace RE {
    };
 
    /*static*/ TileRect* TileRect::CreateOnGameHeap() {
-      return (TileRect*) ThisStdCall(0x00590070, nullptr);
+       //THEFUCK???? THISCALL WITH NULL THIS?????????
+
+      return (TileRect*) ThisStdCall<TileRect>(0x00590070, nullptr);
    }
 }

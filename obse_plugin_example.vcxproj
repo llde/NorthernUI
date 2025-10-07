@@ -91,12 +91,12 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir);$(SolutionDir)..\obse\;$(SolutionDir)\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_NO_VA_START_VALIDATION;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;WIN32;NDEBUG;_WINDOWS;_USRDLL;OBLIVION_VERSION=0x010201A0;OBLIVION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ForcedIncludeFiles>stdafx.h;obse_common/obse_prefix.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
-      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+      <ObjectFileName>$(IntDir)/NUI/%(RelativeDir)</ObjectFileName>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -116,6 +116,47 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\obse\obse\CommandElements.cpp" />
+    <ClCompile Include="..\obse\obse\GameActorValues.cpp" />
+    <ClCompile Include="..\obse\obse\GameAPI.cpp" />
+    <ClCompile Include="..\obse\obse\GameBSExtraData.cpp" />
+    <ClCompile Include="..\obse\obse\GameData.cpp" />
+    <ClCompile Include="..\obse\obse\GameExtraData.cpp" />
+    <ClCompile Include="..\obse\obse\GameForms.cpp" />
+    <ClCompile Include="..\obse\obse\GameMagicEffects.cpp" />
+    <ClCompile Include="..\obse\obse\GameMenus.cpp" />
+    <ClCompile Include="..\obse\obse\GameObjects.cpp" />
+    <ClCompile Include="..\obse\obse\GameOSDepend.cpp" />
+    <ClCompile Include="..\obse\obse\GameProcess.cpp" />
+    <ClCompile Include="..\obse\obse\GameTasks.cpp" />
+    <ClCompile Include="..\obse\obse\GameTiles.cpp" />
+    <ClCompile Include="..\obse\obse\GameTypes.cpp" />
+    <ClCompile Include="..\obse\obse\HavokBase.cpp" />
+    <ClCompile Include="..\obse\obse\HavokCharacters.cpp" />
+    <ClCompile Include="..\obse\obse\HavokCollision.cpp" />
+    <ClCompile Include="..\obse\obse\HavokDynamics.cpp" />
+    <ClCompile Include="..\obse\obse\HavokReflection.cpp" />
+    <ClCompile Include="..\obse\obse\HavokTypes.cpp" />
+    <ClCompile Include="..\obse\obse\ModTable.cpp" />
+    <ClCompile Include="..\obse\obse\NiAPI.cpp" />
+    <ClCompile Include="..\obse\obse\NiCollision.cpp" />
+    <ClCompile Include="..\obse\obse\NiControllers.cpp" />
+    <ClCompile Include="..\obse\obse\NiExtraData.cpp" />
+    <ClCompile Include="..\obse\obse\NiGeometry.cpp" />
+    <ClCompile Include="..\obse\obse\NiHavok.cpp" />
+    <ClCompile Include="..\obse\obse\NiHavokCharacters.cpp" />
+    <ClCompile Include="..\obse\obse\NiHavokConstraints.cpp" />
+    <ClCompile Include="..\obse\obse\NiHavokObjects.cpp" />
+    <ClCompile Include="..\obse\obse\NiHavokShapes.cpp" />
+    <ClCompile Include="..\obse\obse\NiNodes.cpp" />
+    <ClCompile Include="..\obse\obse\NiObjects.cpp" />
+    <ClCompile Include="..\obse\obse\NiProperties.cpp" />
+    <ClCompile Include="..\obse\obse\NiRenderer.cpp" />
+    <ClCompile Include="..\obse\obse\NiRTTI.cpp" />
+    <ClCompile Include="..\obse\obse\NiTasks.cpp" />
+    <ClCompile Include="..\obse\obse\NiTypes.cpp" />
+    <ClCompile Include="..\obse\obse\Script.cpp" />
+    <ClCompile Include="..\obse\obse\Utilities.cpp" />
     <ClCompile Include="Fun\x86Reader.cpp" />
     <ClCompile Include="Miscellaneous\file.cpp" />
     <ClCompile Include="Miscellaneous\InGameDate.cpp" />
@@ -234,7 +275,6 @@
     <ClCompile Include="ReverseEngineered\UI\MenuTextInputState.cpp" />
     <ClCompile Include="ReverseEngineered\UI\Tile.cpp" />
     <ClCompile Include="ReverseEngineered\_BASE.cpp" />
-    <ClCompile Include="ScriptCommands\OBSESamples.cpp" />
     <ClCompile Include="Services\FontShim.cpp" />
     <ClCompile Include="Services\INISettings.cpp" />
     <ClCompile Include="Services\serialization.cpp" />
@@ -242,6 +282,7 @@
   <ItemGroup>
     <!-- <ClInclude Include="..\obse\obse\*.h" Exclude="..\obse\obse\Commands_*.h" />
     <ClInclude Include="..\obse\StdAfx.h" /> -->
+    <ClInclude Include="..\obse\obse\CommandTable.h" />
     <ClInclude Include="..\obse\obse\GameActorValues.h" />
     <ClInclude Include="..\obse\obse\GameAPI.h" />
     <ClInclude Include="..\obse\obse\GameBSExtraData.h" />
@@ -264,6 +305,7 @@
     <ClInclude Include="..\obse\obse\HavokDynamics.h" />
     <ClInclude Include="..\obse\obse\HavokReflection.h" />
     <ClInclude Include="..\obse\obse\HavokTypes.h" />
+    <ClInclude Include="..\obse\obse\ModTable.h" />
     <ClInclude Include="..\obse\obse\NiAPI.h" />
     <ClInclude Include="..\obse\obse\NiCollision.h" />
     <ClInclude Include="..\obse\obse\NiControllers.h" />
@@ -281,6 +323,7 @@
     <ClInclude Include="..\obse\obse\NiRTTI.h" />
     <ClInclude Include="..\obse\obse\NiTask.h" />
     <ClInclude Include="..\obse\obse\NiTypes.h" />
+    <ClInclude Include="..\obse\obse\Script.h" />
     <ClInclude Include="dds.h" />
     <ClInclude Include="Fun\x86Reader.h" />
     <ClInclude Include="Fun\x86Writer.h" />
@@ -429,7 +472,6 @@
     <ClInclude Include="ReverseEngineered\UI\TagIDs.h" />
     <ClInclude Include="ReverseEngineered\UI\Tile.h" />
     <ClInclude Include="ReverseEngineered\_BASE.h" />
-    <ClInclude Include="ScriptCommands\OBSESamples.h" />
     <ClInclude Include="ScriptCommands\XInput.h" />
     <ClInclude Include="Services\FontShim.h" />
     <ClInclude Include="Services\INISettings.h" />
@@ -470,6 +512,11 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="NorthernUI.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\common.vcxproj">
+      <Project>{20c6411c-596f-4b85-be4e-8bc91f59d8a6}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
